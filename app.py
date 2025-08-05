@@ -5,7 +5,7 @@ import io, qrcode
 from flask import send_file, request
 
 
-BASE_DIR      = (__file__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = "templates"
 VOUCHER_FILE  = "vouchers.json"
 
@@ -66,3 +66,4 @@ if __name__ == "__main__":
     if os.path.isdir(TEMPLATES_DIR):
         print("Templates:", os.listdir(TEMPLATES_DIR))
     app.run(host="0.0.0.0", port=5000)
+
